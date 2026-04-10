@@ -19,7 +19,6 @@ setTimeout(type,40);
 
 }
 
-
 type();
 
 
