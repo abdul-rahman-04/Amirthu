@@ -1,3 +1,4 @@
+
 const text =
 "Today is not just another day… it’s the day the world was blessed with someone truly amazing and that's you. I created this little space on the internet just to celebrate you and remind you how special you are.So take a moment, smile, and explore this page… because today is all about you. 💫";
 
@@ -13,7 +14,7 @@ document.getElementById("typing").innerHTML += text.charAt(i);
 
 i++;
 
-setTimeout(type,40);
+setTimeout(type,80);
 
 }
 
@@ -134,7 +135,60 @@ confetti.remove();
 
 }
 
+const messages = [
+  "Wait... today is not just a normal day ✨",
+  "Someone very special was born today 💖",
+  "Someone who brings smiles without trying 😊",
+  "Someone who makes every moment better 🌸",
+  "And honestly... that someone means a lot to me ❤️",
+  "So today is all about you 🥺",
+  "Ready to see your surprise? 🎁"
+];
 
+let index = 0;
+let charIndex = 0;
+
+const textEl = document.getElementById("text");
+const btn = document.getElementById("nextBtn");
+
+/* Typing Effect */
+function typeText() {
+  if (charIndex < messages[index].length) {
+    textEl.innerHTML += messages[index].charAt(charIndex);
+    charIndex++;
+    setTimeout(typeText, 40);
+  } else {
+    btn.style.opacity = 1;
+  }
+}
+
+/* Next Step */
+function nextStep() {
+  btn.style.opacity = 0;
+  index++;
+  charIndex = 0;
+  textEl.innerHTML = "";
+
+  if (index < messages.length) {
+    typeText();
+  } else {
+    openMain();
+  }
+}
+
+/* Open Main Page */
+function openMain() {
+  document.getElementById("intro").style.opacity = "0";
+
+  setTimeout(() => {
+    document.getElementById("intro").style.display = "none";
+    document.getElementById("mainContent").style.display = "block";
+    document.body.style.overflow = "auto";
+  }, 1000);
+}
+
+/* Start */
+typeText();
 
 /* FIREWORKS EFFECT */
 
