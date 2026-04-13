@@ -13,7 +13,7 @@ document.getElementById("typing").innerHTML += text.charAt(i);
 
 i++;
 
-setTimeout(type,40);
+setTimeout(type,120);
 
 }
 
@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
   "I really wanted to make it feel a little more special than usual 💖",
   "Even with all the thoughts you carry, you still manage to make others feel okay 😊",
   "I don’t think you realize how much you mean to people around you...",
-  "But I do .... You mean more than you think 🥺",
+  "But I do .... You mean more than you think 🥹",
   "So I donn’t want this day to be just another ‘Happy Birthday’...",
   "I wanted to do something different this time...",
   "So yeah… this is for you ❤️"
